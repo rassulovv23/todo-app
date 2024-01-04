@@ -7,7 +7,7 @@
   }
 
   // создаём и возвращаем форму для создания дела
-  function createItemForm() {
+  function createTodoItemForm() {
     let form = document.createElement("form");
     let input = document.createElement("input");
     let buttonWrapper = document.createElement("div");
@@ -30,4 +30,23 @@
       button,
     };
   }
+
+  // создаём и возвращаем список элементов
+  function createTodoList() {
+    let list = document.createElement("ul");
+    list.classList.add("list-group");
+    return list;
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    let container = document.getElementById("todo-app");
+
+    let todoAppTitle = (createAppTitle = "Список дел");
+    let todoItemForm = createTodoItemForm();
+    let todoList = createTodoList();
+
+    container.append(todoAppTitle);
+    container.append(todoItemForm);
+    container.append(todoList);
+  });
 });
