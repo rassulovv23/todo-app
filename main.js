@@ -41,12 +41,12 @@
   document.addEventListener("DOMContentLoaded", function () {
     let container = document.getElementById("todo-app");
 
-    let todoAppTitle = (createAppTitle = "Список дел");
+    let todoAppTitle = createAppTitle("Список дел");
     let todoItemForm = createTodoItemForm();
     let todoList = createTodoList();
 
     container.append(todoAppTitle);
-    container.append(todoItemForm);
+    container.append(todoItemForm.form);
     container.append(todoList);
   });
-});
+})();
