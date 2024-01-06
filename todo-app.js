@@ -124,9 +124,5 @@
     });
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
-    createTodoApp(document.getElementById("my-todos"), "Мои дела");
-    createTodoApp(document.getElementById("mom-todos"), "Дела мамы");
-    createTodoApp(document.getElementById("dad-todos"), "Дела папы");
-  });
+  window.createTodoApp = createTodoApp;
 })();
