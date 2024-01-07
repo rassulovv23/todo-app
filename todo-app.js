@@ -19,10 +19,20 @@
     buttonWrapper.classList.add("input-group-append");
     button.classList.add("btn", "btn-primary");
     button.textContent = "Добавить дело";
+    button.disabled = true;
 
     buttonWrapper.append(button);
     form.append(input);
     form.append(buttonWrapper);
+
+    input.addEventListener("input", function (e) {
+      e.preventDefault();
+      if (input.value.length > 0) {
+        button.disabled = false;
+      } else if (input.value.length == 0) {
+        button.disabled = true;
+      }
+    });
 
     return {
       form,
